@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class ArrayExerciseWithQuotations {
+    public static void main (String [] args) {
+        System.out.println("----Start of Program----");  
+        int numStrings = getIntFromUser("How many quotes do you want to enter?");
+        System.out.println(numStrings + " quotes? Kewl.");
+        String [] myFavoriteQuotations = new String[numStrings];
+        for (int arrayNum = 0; arrayNum < numStrings; arrayNum++) {
+            myFavoriteQuotations[arrayNum] = getStringFromUser("Enter a quote.");
+        }
+        System.out.println("Here are the quotes you entered:");
+        int arrayLength = myFavoriteQuotations.length;
+        for (int quoteNum = 0; quoteNum < arrayLength; quoteNum++) {
+            System.out.println(myFavoriteQuotations[quoteNum]);
+        }
+    }
+    public static int getIntFromUser(String prompt) {
+        System.out.println(prompt);
+        Scanner userScanner = new Scanner(System.in);
+        return userScanner.nextInt();
+    }
+    public static String getStringFromUser(String prompt) {
+        System.out.println(prompt);
+        Scanner userScanner = new Scanner(System.in);
+        return userScanner.nextLine();
+    }
+}
